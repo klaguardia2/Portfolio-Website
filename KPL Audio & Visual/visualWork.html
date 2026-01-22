@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Work</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e6d2acfd51.js" crossorigin="anonymous"></script>
+    <script>
+        // Immediately determine which tab should be active based on URL hash
+        // This prevents the default Photography tab from showing before switching
+        (function () {
+            // Disable automatic scroll restoration
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+
+            var hash = window.location.hash.substring(1);
+            var initialTab = hash || 'Photography'; // Default to Photography if no hash
+
+            // Store the initial tab to be used when the DOM loads
+            window.initialActiveTab = initialTab;
+
+            // Immediately remove the hash from URL to prevent browser scrolling to it
+            // But keep it stored in our variable
+            if (hash) {
+                // Replace the URL without the hash, preventing default scroll behavior
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+
+            // Force scroll to top immediately
+            window.scrollTo(0, 0);
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header-padding">
+        <div class="header-flex">
+            <div class="header-text-left">
+                <a href="home.html" class="header-logo-link">
+                    <img src="images/Logo.png" alt="Kaylynn Laguardia" class="header-logo">
+                </a>
+            </div>
+            <div class="header-center-logo">
+                <img src="images/laGAV.png" alt="laGAV" class="header-center-img">
+            </div>
+            <nav class="header-nav-img" id="nav-buttons">
+                <a href="#" onclick="openTab(event, 'Photography'); return false;" class="nav-img-link"
+                    data-button="photo">
+                    <div class="hitbox hitbox-photo-1"></div>
+                    <div class="hitbox hitbox-photo-2"></div>
+                    <img src="images/Buttons/PhotoOutline.png" alt="Photography" class="nav-outline">
+                    <img src="images/Buttons/PhotoFilled.png" alt="Photography" class="nav-filled">
+                </a>
+                <a href="#" onclick="openTab(event, 'Videography'); return false;" class="nav-img-link"
+                    data-button="video">
+                    <div class="hitbox hitbox-video-1"></div>
+                    <div class="hitbox hitbox-video-2"></div>
+                    <div class="hitbox hitbox-video-3"></div>
+                    <div class="hitbox hitbox-video-4"></div>
+                    <img src="images/Buttons/VideoOutline.png" alt="Videography" class="nav-outline">
+                    <img src="images/Buttons/VideoFilled.png" alt="Videography" class="nav-filled">
+                </a>
+                <a href="#" onclick="openTab(event, 'Design'); return false;" class="nav-img-link" data-button="design">
+                    <div class="hitbox hitbox-design-1"></div>
+                    <div class="hitbox hitbox-design-2"></div>
+                    <div class="hitbox hitbox-design-3"></div>
+                    <div class="hitbox hitbox-design-4"></div>
+                    <img src="images/Buttons/DesignOutline.png" alt="Design" class="nav-outline">
+                    <img src="images/Buttons/DesignFilled.png" alt="Design" class="nav-filled">
+                </a>
+                <a href="audioWork.html" class="nav-img-link" data-button="audio">
+                    <div class="hitbox hitbox-nav-audio-1"></div>
+                    <div class="hitbox hitbox-nav-audio-2"></div>
+                    <div class="hitbox hitbox-nav-audio-3"></div>
+                    <div class="hitbox hitbox-nav-audio-4"></div>
+                    <img src="images/Buttons/AudioOutline.png" alt="Audio" class="nav-outline">
+                    <img src="images/Buttons/AudioFilled.png" alt="Audio" class="nav-filled">
+                </a>
+                <a href="about.html" class="nav-img-link" data-button="about">
+                    <div class="hitbox hitbox-about-1"></div>
+                    <div class="hitbox hitbox-about-2"></div>
+                    <div class="hitbox hitbox-about-3"></div>
+                    <div class="hitbox hitbox-about-4"></div>
+                    <div class="hitbox hitbox-about-5"></div>
+                    <img src="images/Buttons/AboutOutline.png" alt="About" class="nav-outline">
+                    <img src="images/Buttons/AboutFilled.png" alt="About" class="nav-filled">
+                </a>
+                <a href="contact.html" class="nav-img-link" data-button="contact">
+                    <div class="hitbox hitbox-contact-1"></div>
+                    <div class="hitbox hitbox-contact-2"></div>
+                    <div class="hitbox hitbox-contact-3"></div>
+                    <img src="images/Buttons/ContactOutline.png" alt="Contact" class="nav-outline">
+                    <img src="images/Buttons/ContactFilled.png" alt="Contact" class="nav-filled">
+                </a>
+                <a href="#" class="nav-img-link" data-button="lagxtra">
+                    <img src="images/Buttons/LAGXtra.png" alt="LAGXtra" class="nav-outline">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Visual Work Banner -->
+    <div class="full-width-section full-width-banner full-width-banner-green">
+        <div class="centered-content banner-content">
+            <h1 style="color: #e3e4d9; margin: 0;">Visual Work</h1>
+        </div>
+    </div>
+
+    <!-- Intro Text -->
+    <div class="visual-work-intro">
+        <p>Explore our collection of creative projects spanning photography, videography, and design. Each piece
+            represents our commitment to artistic excellence and collaboration.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-menu">
+        <button class="tab-link" onclick="openTab(event, 'Photography')">Photography</button>
+        <button class="tab-link" onclick="openTab(event, 'Videography')">Videography</button>
+        <button class="tab-link" onclick="openTab(event, 'Design')">Design</button>
+    </div>
+
+    <!-- Photography Content -->
+    <div id="Photography" class="tab-content">
+        <div class="photo-grid">
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/01.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/02.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/03.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/04.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/05.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/06.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/07.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/08.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/09.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/10.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/11.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/12.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/13.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/14.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/15.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/16.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/17.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/18.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/19.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/20.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/21.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/22.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/23.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/24.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/25.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/26.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/27.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/28.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/29.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/30.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/31.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/32.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/33.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/34.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/35.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/36.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/37.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/38.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/39.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/40.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/41.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/42.jpg" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/43.JPG" alt="Photography">
+            </div>
+            <div class="photo-grid-item">
+                <img src="images/visual/Photography/44.jpg" alt="Photography">
+            </div>
+        </div>
+    </div>
+
+    <!-- Videography Content -->
+    <div id="Videography" class="tab-content">
+        <div class="youtube-grid">
+            <div class="youtube-video-item">
+                <iframe src="https://www.youtube.com/embed/lf12xV6cQC4" title="YouTube video player 1" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="youtube-video-item">
+                <iframe src="https://www.youtube.com/embed/J3wLZIXPuHQ" title="YouTube video player 2" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Content -->
+    <div id="Design" class="tab-content">
+        <div class="design-masonry-grid">
+            <!-- Column 1 -->
+            <div class="design-masonry-column">
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/FG LOGO.png" alt="FG Logo Design">
+                </div>
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/Enlighten LOGO.png" alt="Enlighten Logo Design">
+                </div>
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/Songwriter Showcase Instagram Post.png"
+                        alt="Songwriter Showcase Instagram Post">
+                </div>
+            </div>
+            <!-- Column 2 -->
+            <div class="design-masonry-column">
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/UYG Cover.png" alt="UYG Cover Design">
+                </div>
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/DCP LOGO.jpg" alt="DCP Logo">
+                </div>
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/April12_GrahamMonroe_Poster.png" alt="Graham Monroe Poster">
+                </div>
+            </div>
+            <!-- Column 3 -->
+            <div class="design-masonry-column">
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/AAT LOGO.png" alt="AAT Logo Design">
+                </div>
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/Studio Jam Medium Banner.jpeg" alt="Studio Jam Banner">
+                </div>
+                <div class="design-masonry-item">
+                    <img src="images/visual/Design/ImmersiveExploration_FenwayGallery_Poster.png"
+                        alt="Immersive Exploration Poster">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal Popup -->
+    <div id="imgModal" class="image-modal">
+        <span id="closeModal" class="modal-close">&times;</span>
+        <img id="modalImg" src="" alt="" class="modal-image">
+    </div>
+
+    <!-- Video Modal Popup -->
+    <div id="videoModal" class="image-modal">
+        <span id="closeVideoModal" class="modal-close">&times;</span>
+        <video id="modalVideo" class="modal-video" controls></video>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function openTab(evt, tabName) {
+            // Immediately scroll to top to prevent scrolling to galleries first
+            window.scrollTo(0, 0);
+
+            var i, tabcontent, tablinks;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the "active" class from all tab buttons (both old and new styles)
+            tablinks = document.querySelectorAll(".tab-link, .tab-link-img");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab
+            document.getElementById(tabName).style.display = "block";
+
+            // Find and activate the correct tab button in the tab menu
+            for (i = 0; i < tablinks.length; i++) {
+                if (tablinks[i].getAttribute('onclick')?.includes(tabName)) {
+                    tablinks[i].className += " active";
+                    break;
+                }
+            }
+
+            // Pause any playing videos when switching tabs
+            document.getElementById('modalVideo').pause();
+            document.getElementById('videoModal').style.display = 'none';
+
+            // Update header nav button active states
+            updateActiveNavButton();
+        }
+
+        // Initialize the correct tab on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            // Ensure we're at the top
+            window.scrollTo(0, 0);
+
+            // Get the initial tab from the hash (set in head script)
+            const initialTab = window.initialActiveTab || 'Photography';
+
+            // Hide all tabs first
+            const allTabs = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < allTabs.length; i++) {
+                allTabs[i].style.display = 'none';
+            }
+
+            // Show the correct initial tab
+            const targetTab = document.getElementById(initialTab);
+            if (targetTab) {
+                targetTab.style.display = 'block';
+            }
+
+            // Set the correct tab button as active
+            const tabButtons = document.querySelectorAll('.tab-link, .tab-link-img');
+            for (let i = 0; i < tabButtons.length; i++) {
+                if (tabButtons[i].getAttribute('onclick')?.includes(initialTab)) {
+                    tabButtons[i].classList.add('active');
+                } else {
+                    tabButtons[i].classList.remove('active');
+                }
+            }
+
+            // Update header nav button active states
+            updateActiveNavButton();
+        });
+
+        // Ensure scroll stays at top after full page load
+        window.addEventListener('load', function () {
+            requestAnimationFrame(function () {
+                window.scrollTo(0, 0);
+                requestAnimationFrame(function () {
+                    window.scrollTo(0, 0);
+                });
+            });
+        });
+
+        // Function to update header nav button active states
+        function updateActiveNavButton() {
+            // Get all header nav buttons
+            const headerNavButtons = document.querySelectorAll('#nav-buttons .nav-img-link');
+
+            // Remove active-page class from all header nav buttons
+            headerNavButtons.forEach(btn => btn.classList.remove('active-page'));
+
+            // Find which tab is currently active
+            const activeTabButton = document.querySelector('.tab-link.active, .tab-link-img.active');
+            if (activeTabButton) {
+                const onclick = activeTabButton.getAttribute('onclick');
+
+                // Map tab names to header nav buttons
+                if (onclick?.includes('Photography')) {
+                    const photoBtn = document.querySelector('#nav-buttons [data-button="photo"]');
+                    if (photoBtn) photoBtn.classList.add('active-page');
+                } else if (onclick?.includes('Videography')) {
+                    const videoBtn = document.querySelector('#nav-buttons [data-button="video"]');
+                    if (videoBtn) videoBtn.classList.add('active-page');
+                } else if (onclick?.includes('Design')) {
+                    const designBtn = document.querySelector('#nav-buttons [data-button="design"]');
+                    if (designBtn) designBtn.classList.add('active-page');
+                }
+            }
+        }
+
+        // Image modal functionality (for photos and design)
+        document.querySelectorAll('.photo-grid-item img, .design-grid-item img, .design-masonry-item img').forEach(img => {
+            img.addEventListener('click', function () {
+                document.getElementById('modalImg').src = this.src;
+                document.getElementById('modalImg').alt = this.alt;
+                document.getElementById('imgModal').style.display = 'flex';
+            });
+        });
+
+        document.getElementById('closeModal').onclick = function () {
+            document.getElementById('imgModal').style.display = 'none';
+        };
+
+        document.getElementById('imgModal').onclick = function (e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+
+        // Video modal functionality
+        document.querySelectorAll('.video-grid-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const videoSrc = this.getAttribute('data-video');
+                const modalVideo = document.getElementById('modalVideo');
+                modalVideo.src = videoSrc;
+                document.getElementById('videoModal').style.display = 'flex';
+                modalVideo.play();
+            });
+        });
+
+        document.getElementById('closeVideoModal').onclick = function () {
+            const modalVideo = document.getElementById('modalVideo');
+            modalVideo.pause();
+            modalVideo.src = '';
+            document.getElementById('videoModal').style.display = 'none';
+        };
+
+        document.getElementById('videoModal').onclick = function (e) {
+            if (e.target === this) {
+                const modalVideo = document.getElementById('modalVideo');
+                modalVideo.pause();
+                modalVideo.src = '';
+                this.style.display = 'none';
+            }
+        };
+    </script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="flex-row">
+            <div class="text-content flex-1 text-left">
+                <h1 class="fenway-title text-green">Kaylynn Laguardia</h1>
+                <h2 class="fenway-subtitle no-margin-bottom">Photographer | Videographer | Designer <br>Audio Engineer &
+                    Producer</h2>
+            </div>
+            <nav class="footer-nav">
+                <a href="mailto:fenwaygallery@gmail.com" class="btn" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.facebook.com/FenwayGallery/" class="btn" aria-label="Facebook">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/fenwaygallery/" class="btn" aria-label="Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>

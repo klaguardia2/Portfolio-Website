@@ -1,0 +1,1776 @@
+@font-face {
+    font-family: 'JackArmstrong';
+    src: url('images/font/Jack Armstrong.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #e3e4d9;
+    color: #2b1a0c;
+    margin: 0;
+    position: relative;
+}
+
+/* Orange boat background image */
+.orange-boat-bg {
+    position: relative;
+    /* Restored to relative to give wrapper height */
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+}
+
+header {
+    background-color: rgba(227, 228, 217, 0.7);
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+    /* Added spacing under header */
+    position: relative;
+    /* Default for all pages */
+    z-index: 10;
+}
+
+/* Home page header overlay */
+.home-overlay-header header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    padding-left: 2.08vw;
+    /* 30px */
+    padding-right: 2.08vw;
+    /* 30px */
+}
+
+/* Centered header logo */
+.header-center-logo {
+    position: absolute;
+    left: 48%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.header-center-img {
+    height: 5.55vw;
+    /* 80px */
+    width: auto;
+}
+
+
+.fenway-title {
+    font-size: 2.22vw;
+    /* ~32px / 2rem approx scaling */
+    font-weight: bold;
+    color: #8b1700;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.fenway-subtitle {
+    font-size: 1.11vw;
+    /* ~16px / 1rem approx scaling */
+    font-weight: normal;
+    color: #8b1700;
+    margin: 0.25vw 0 0 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Image-based header navigation */
+.header-nav-img {
+    position: absolute;
+    top: 0;
+    /* Adjusted mid-way */
+    right: 18.75vw;
+    /* 270px */
+}
+
+.nav-img-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    text-decoration: none;
+}
+
+[data-button="audio"] {
+    left: -3.82vw;
+    /* -55px */
+}
+
+.nav-img-link img {
+    display: block;
+    height: 5.55vw;
+    /* 80px */
+    width: auto;
+    pointer-events: none;
+}
+
+.nav-img-link .nav-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.nav-img-link .nav-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Hitbox styles - invisible but functional */
+.hitbox {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: auto;
+    z-index: 9999;
+}
+
+/* Photo hitboxes - Red shades */
+.hitbox-photo-1 {
+    width: 4.51vw;
+    /* 65px */
+    height: 2.78vw;
+    /* 40px */
+    background-color: red;
+    top: 2.50vw;
+    /* 36px */
+    left: 0.56vw;
+    /* 8px */
+}
+
+.hitbox-photo-2 {
+    width: 2.99vw;
+    /* 43px */
+    height: 4.17vw;
+    /* 60px */
+    background-color: darkred;
+    rotate: -20deg;
+    top: 0.28vw;
+    /* 4px */
+    left: 0.83vw;
+    /* 12px */
+}
+
+/* Video hitboxes - Blue shades */
+.hitbox-video-1 {
+    width: 5.14vw;
+    /* 74px */
+    height: 1.74vw;
+    /* 25px */
+    background-color: blue;
+    rotate: 45deg;
+    top: 1.60vw;
+    /* 23px */
+    left: 3.06vw;
+    /* 44px */
+}
+
+.hitbox-video-2 {
+    width: 4.51vw;
+    /* 65px */
+    height: 1.04vw;
+    /* 15px */
+    background-color: darkblue;
+    top: 0.56vw;
+    /* 8px */
+    left: 4.17vw;
+    /* 60px */
+}
+
+.hitbox-video-3 {
+    width: 1.39vw;
+    /* 20px */
+    height: 2.08vw;
+    /* 30px */
+    background-color: skyblue;
+    top: 3.13vw;
+    /* 45px */
+    left: 5.56vw;
+    /* 80px */
+}
+
+.hitbox-video-4 {
+    width: 0.69vw;
+    /* 10px */
+    height: 1.39vw;
+    /* 20px */
+    background-color: cyan;
+    top: 1.39vw;
+    /* 20px */
+    left: 6.04vw;
+    /* 87px */
+    rotate: -20deg;
+}
+
+/* Design hitboxes - Green shades */
+.hitbox-design-1 {
+    width: 5.90vw;
+    /* 85px */
+    height: 1.74vw;
+    /* 25px */
+    background-color: green;
+    top: 1.74vw;
+    /* 25px */
+    left: 6.94vw;
+    /* 100px */
+    rotate: 10deg;
+}
+
+.hitbox-design-2 {
+    width: 2.08vw;
+    /* 30px */
+    height: 6.74vw;
+    /* 97px */
+    background-color: darkgreen;
+    top: -0.56vw;
+    /* -8px */
+    left: 8.89vw;
+    /* 128px */
+    rotate: 45deg;
+}
+
+.hitbox-design-3 {
+    width: 3.47vw;
+    /* 50px */
+    height: 0.69vw;
+    /* 10px */
+    background-color: lime;
+    top: 0.35vw;
+    /* 5px */
+    left: 8.89vw;
+    /* 128px */
+}
+
+.hitbox-design-4 {
+    width: 3.47vw;
+    /* 50px */
+    height: 1.39vw;
+    /* 20px */
+    background-color: forestgreen;
+    top: 1.39vw;
+    /* 20px */
+    left: 7.29vw;
+    /* 105px */
+    rotate: -45deg;
+}
+
+/* Audio Navigation hitboxes - Orange/Brown shades */
+.hitbox-nav-audio-1 {
+    width: 1.39vw;
+    /* 20px */
+    height: 2.50vw;
+    /* 36px */
+    background-color: orange;
+    top: 0.69vw;
+    /* 10px */
+    left: 0.42vw;
+    /* 6px */
+    rotate: -45deg;
+}
+
+.hitbox-nav-audio-2 {
+    width: 2.08vw;
+    /* 30px */
+    height: 4.17vw;
+    /* 60px */
+    background-color: darkorange;
+    top: 1.04vw;
+    /* 15px */
+    left: 1.94vw;
+    /* 28px */
+    rotate: -10deg;
+}
+
+.hitbox-nav-audio-3 {
+    width: 4.17vw;
+    /* 60px */
+    height: 2.43vw;
+    /* 35px */
+    background-color: coral;
+    top: 0.21vw;
+    /* 3px */
+    left: 0.21vw;
+    /* 3px */
+    rotate: -15deg;
+}
+
+.hitbox-nav-audio-4 {
+    width: 1.39vw;
+    /* 20px */
+    height: 2.50vw;
+    /* 36px */
+    background-color: orangered;
+    top: 1.18vw;
+    /* 17px */
+    left: 3.13vw;
+    /* 45px */
+    rotate: -5deg;
+}
+
+/* About hitboxes - Purple shades */
+.hitbox-about-1 {
+    width: 1.39vw;
+    /* 20px */
+    height: 4.86vw;
+    /* 70px */
+    background-color: purple;
+    top: 0.49vw;
+    /* 7px */
+    left: 12.85vw;
+    /* 185px */
+    rotate: -14deg;
+}
+
+.hitbox-about-2 {
+    width: 2.08vw;
+    /* 30px */
+    height: 1.74vw;
+    /* 25px */
+    background-color: darkviolet;
+    top: 1.88vw;
+    /* 27px */
+    left: 13.54vw;
+    /* 195px */
+    rotate: -20deg;
+}
+
+.hitbox-about-3 {
+    width: 4.51vw;
+    /* 65px */
+    height: 1.39vw;
+    /* 20px */
+    background-color: mediumorchid;
+    top: 3.82vw;
+    /* 55px */
+    left: 10.69vw;
+    /* 154px */
+    rotate: 10deg;
+}
+
+.hitbox-about-4 {
+    width: 0.69vw;
+    /* 10px */
+    height: 0.69vw;
+    /* 10px */
+    background-color: plum;
+    top: 3.33vw;
+    /* 48px */
+    left: 12.64vw;
+    /* 182px */
+}
+
+.hitbox-about-5 {
+    width: 2.43vw;
+    /* 35px */
+    height: 1.04vw;
+    /* 15px */
+    background-color: violet;
+    top: 4.38vw;
+    /* 63px */
+    left: 9.72vw;
+    /* 140px */
+    rotate: -10deg;
+}
+
+/* Contact hitbox - Orange */
+.hitbox-contact-1 {
+    width: 3.47vw;
+    /* 50px */
+    height: 1.39vw;
+    /* 20px */
+    background-color: orange;
+    top: 0.42vw;
+    /* 6px */
+    left: 13.61vw;
+    /* 196px */
+    rotate: 14deg;
+}
+
+.hitbox-contact-2 {
+    width: 2.08vw;
+    /* 30px */
+    height: 1.04vw;
+    /* 15px */
+    background-color: darkorange;
+    top: 0.49vw;
+    /* 7px */
+    left: 15.28vw;
+    /* 220px */
+    rotate: -15deg;
+}
+
+.hitbox-contact-3 {
+    width: 2.08vw;
+    /* 30px */
+    height: 1.39vw;
+    /* 20px */
+    background-color: darkorange;
+    top: 1.04vw;
+    /* 15px */
+    left: 15.42vw;
+    /* 222px */
+    rotate: 60deg;
+}
+
+/* Hitbox hover triggers filled state */
+.hitbox:hover~.nav-outline {
+    opacity: 0;
+}
+
+.hitbox:hover~.nav-filled {
+    opacity: 1;
+}
+
+/* Active page indicator - lock current page button in filled state */
+.nav-img-link.active-page .nav-outline {
+    opacity: 0;
+}
+
+.nav-img-link.active-page .nav-filled {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    color: #8b1700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #8b1700;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #e3e4d9;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #8b1700;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #8b1700;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+p {
+    font-size: 1.25rem;
+    color: #2b1a0c;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+footer {
+    background-color: #e3e4d9;
+    color: #8b1700;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 20;
+
+}
+
+footer>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.full-width-section {
+    width: 100%;
+    background-color: #8b1700;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.centered-content {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 0em;
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sm-div {
+    padding: 10px;
+    flex: 1;
+}
+
+ul {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-left: 1rem;
+}
+
+.md-div {
+    padding: 30px;
+    flex: 1;
+}
+
+.lg-div {
+    padding: 50px;
+    flex: 1;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.button {
+    background-color: #e3e4d9;
+}
+
+.text-content {
+    margin: 30px;
+}
+
+.btn {
+    background-color: transparent;
+    color: #8b1700;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.scroll-gallery-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem 0;
+    border-radius: 8px;
+    background-color: #e3e4d9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-gallery-container img {
+    height: 300px;
+    width: auto;
+    display: inline-block;
+    margin: 0 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.scroll-gallery-container img:first-child {
+    margin-left: 1rem;
+}
+
+.scroll-gallery-container img:last-child {
+    margin-right: 1rem;
+}
+
+.scroll-gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Classes used by FGEvents.html */
+.header-padding {
+    padding: 0.89vw 0;
+    /* 0.8rem approx */
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text-left {
+    text-align: left;
+}
+
+.header-logo-link {
+    display: inline-block;
+    line-height: 0;
+}
+
+.header-logo {
+    height: 4.86vw;
+    /* 70px */
+    width: auto;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+    opacity: 0.8;
+}
+
+.header-nav-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 2.22vw;
+    /* 2rem */
+    font-weight: normal;
+    color: #8b1700;
+    margin: 0;
+}
+
+.section-subtitle {
+    font-size: 1.39vw;
+    /* 1.25rem */
+    color: #8b1700;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================================
+   Layout Utility Classes
+   ============================================ */
+
+/* Spacer divs */
+.spacer-20 {
+    height: 20px;
+}
+
+.spacer-30 {
+    height: 30px;
+}
+
+/* Flex row layouts */
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ============================================
+   Homepage Specific Styles
+   ============================================ */
+
+/* Hero section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-title {
+    margin: 0;
+    margin-left: 30px;
+    flex: 1;
+}
+
+.hero-image {
+    width: 50%;
+    height: auto;
+    flex: 1;
+    margin-right: 0;
+    border-radius: 0;
+}
+
+/* Centered overlapping hero */
+.hero-centered-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    /* Changed from flex to block for absolute positioning context */
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hero-big-btn {
+    display: block;
+    position: absolute;
+    /* Using vw for all dimensions to lock to background image */
+    top: 18vw;
+    /* Moved up from 25vw */
+    left: 50vw;
+    /* Moved left from 55vw */
+    width: 40vw;
+    /* Scaled width */
+    max-width: none;
+    pointer-events: none;
+    /* Container is non-interactive */
+}
+
+.hero-big-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Home Page Hitboxes */
+.hero-hitbox {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 100;
+    pointer-events: auto;
+
+}
+
+
+
+/* Initial styling for placement - Hidden hitboxes */
+.hero-hitbox.hitbox-audio-1,
+.hero-hitbox.hitbox-audio-2,
+.hero-hitbox.hitbox-audio-3,
+.hero-hitbox.hitbox-audio-4,
+.hero-hitbox.hitbox-audio-5,
+.hero-hitbox.hitbox-audio-6,
+.hero-hitbox.hitbox-audio-7,
+.hero-hitbox.hitbox-audio-8,
+.hero-hitbox.hitbox-audio-9,
+.hero-hitbox.hitbox-audio-10,
+.hero-hitbox.hitbox-audio-11 {
+    background-color: transparent;
+    opacity: 0;
+}
+
+.hitbox-visual-1,
+.hitbox-visual-2,
+.hitbox-visual-3,
+.hitbox-visual-4,
+.hitbox-visual-5,
+.hitbox-visual-6,
+.hitbox-visual-7,
+.hitbox-visual-8,
+.hitbox-visual-9,
+.hitbox-visual-10,
+.hitbox-visual-11,
+.hitbox-visual-12,
+.hitbox-visual-13,
+.hitbox-visual-14 {
+    background-color: transparent;
+    opacity: 0;
+}
+
+/* Placeholder positions - clustered in center for now, user will adjust */
+.hitbox-audio-1 {
+    top: 3%;
+    left: 6%;
+    width: 18vw;
+    height: 6.66vw;
+    rotate: -5deg;
+}
+
+.hitbox-audio-2 {
+    top: 34%;
+    left: 1%;
+    width: 13.33vw;
+    height: 23.33vw;
+    rotate: 10deg;
+}
+
+.hitbox-audio-3 {
+    top: 37%;
+    left: 11%;
+    width: 14.66vw;
+    height: 23.33vw;
+    rotate: -55deg;
+}
+
+.hitbox-audio-4 {
+    bottom: 4%;
+    right: 62%;
+    width: 8vw;
+    height: 2.46vw;
+    rotate: -10deg;
+}
+
+.hitbox-audio-5 {
+    top: 11%;
+    left: 9%;
+    width: 18.66vw;
+    height: 8.66vw;
+    rotate: -40deg;
+}
+
+.hitbox-audio-6 {
+    top: 9%;
+    left: 20%;
+    width: 5vw;
+    height: 21vw;
+    rotate: -35deg;
+}
+
+.hitbox-audio-7 {
+    bottom: 50%;
+    right: 61%;
+    width: 3vw;
+    height: 7.33vw;
+    rotate: 15deg;
+}
+
+.hitbox-audio-8 {
+    top: 35.5%;
+    left: 11.5%;
+    width: 1vw;
+    height: 2.06vw;
+    rotate: 23deg;
+}
+
+.hitbox-audio-9 {
+    top: 28%;
+    right: 58.5%;
+    width: 1vw;
+    height: 3.33vw;
+    rotate: 20deg;
+}
+
+.hitbox-audio-10 {
+    top: 15.5%;
+    left: 8.5%;
+    width: 1.33vw;
+    height: 3vw;
+    rotate: -40deg;
+}
+
+.hitbox-audio-11 {
+    bottom: 45%;
+    left: 34%;
+    width: 2vw;
+    height: 6.66vw;
+}
+
+
+
+
+.hitbox-visual-1 {
+    top: 24%;
+    left: 42.2%;
+    width: 13.33vw;
+    height: 13.33vw;
+}
+
+.hitbox-visual-2 {
+    top: 2%;
+    right: 10%;
+    width: 14.66vw;
+    height: 34.66vw;
+}
+
+.hitbox-visual-3 {
+    bottom: 3%;
+    left: 63.5%;
+    width: 13.33vw;
+    height: 6.66vw;
+
+}
+
+.hitbox-visual-4 {
+    bottom: 26%;
+    right: 2.5%;
+    width: 9.33vw;
+    height: 26.66vw;
+    rotate: 10deg;
+}
+
+/* Rectangle hitboxes for visual button */
+.hitbox-visual-5 {
+    top: 2%;
+    left: 73%;
+    width: 6.66vw;
+    height: 5.33vw;
+    border-radius: 0;
+}
+
+.hitbox-visual-6 {
+    top: 50%;
+    right: 35%;
+    width: 6.66vw;
+    height: 5.33vw;
+    border-radius: 0;
+    rotate: 58deg;
+}
+
+.hitbox-visual-7 {
+    bottom: 13%;
+    left: 76%;
+    width: 6.66vw;
+    height: 5.33vw;
+    border-radius: 0;
+    rotate: 55deg;
+}
+
+.hitbox-visual-8 {
+    top: 2%;
+    right: 40%;
+    width: 3.33vw;
+    height: 14.66vw;
+    rotate: 38deg;
+}
+
+/* Additional rectangle hitboxes */
+.hitbox-visual-9 {
+    bottom: 6.5%;
+    left: 56%;
+    width: 4.66vw;
+    height: 6.66vw;
+    border-radius: 0;
+    rotate: 10deg;
+}
+
+.hitbox-visual-10 {
+    top: 2.5%;
+    right: 30%;
+    width: 5.66vw;
+    height: 5.33vw;
+    border-radius: 0;
+}
+
+/* Oval hitboxes - border-radius: 50% creates ovals */
+.hitbox-visual-11 {
+    top: 1%;
+    left: 54%;
+    width: 2.4vw;
+    height: 4vw;
+    border-radius: 50%;
+    rotate: -60deg;
+}
+
+.hitbox-visual-12 {
+    top: 13%;
+    left: 55%;
+    width: 0.66vw;
+    height: 1.33vw;
+    border-radius: 50%;
+    rotate: 20deg;
+}
+
+.hitbox-visual-13 {
+    bottom: 20%;
+    right: 10%;
+    width: 1.33vw;
+    height: 6vw;
+    border-radius: 50%;
+    rotate: -10deg;
+}
+
+.hitbox-visual-14 {
+    bottom: 6.5%;
+    left: 52.5%;
+    width: 2.86vw;
+    height: 1.53vw;
+    border-radius: 50%;
+    rotate: -40deg;
+}
+
+
+
+
+.hero-big-btn .hero-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.hero-big-btn:hover .hero-filled {
+    opacity: 1;
+}
+
+.hero-big-btn:hover .hero-outline {
+    opacity: 0;
+}
+
+/* Full-width banner sections */
+.full-width-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.full-width-banner-green {
+    background: #8b1700;
+}
+
+.full-width-banner-gray {
+    background: #bdc9c1;
+}
+
+.banner-content {
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    max-width: 60%;
+    text-align: center;
+}
+
+.banner-content-wide {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.banner-content-compact {
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Text color variants */
+.text-cream {
+    color: #e3e4d9;
+}
+
+.text-dark {
+    color: #2d2d2d;
+}
+
+.text-green {
+    color: #8b1700;
+}
+
+/* Content sections with image + text */
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-image-left {
+    width: 50%;
+    height: auto;
+    max-height: 700px;
+    flex: 1;
+    border-radius: 4px;
+    margin: 30px 70px 30px 200px;
+}
+
+.content-image-right {
+    width: 50%;
+    height: auto;
+    max-height: 700px;
+    flex: 1;
+    border-radius: 4px;
+    margin: 30px 200px 0 70px;
+}
+
+.content-text-right {
+    flex: 1;
+    padding: 0 200px 0 0;
+}
+
+.content-text-left {
+    flex: 1;
+    padding: 30px 0 0 200px;
+}
+
+/* Standalone centered image */
+.centered-image {
+    width: 50%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 4px;
+    margin: auto;
+}
+
+/* Footer styles */
+.footer-padding {
+    padding: 1rem 0;
+}
+
+.site-footer {
+    background-color: #bdc9c1;
+    padding: 0.5rem 30px;
+    /* Reduced from 1rem to make it even skinnier */
+    margin-top: 40px;
+}
+
+.site-footer .flex-row {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-nav .btn {
+    font-size: 2vw;
+    /* Use vw units for scaling icons */
+    color: #8b1700;
+    /* Ensure color matches theme */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav .btn:hover {
+    color: #4a7c59;
+    /* Hover color */
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+/* Zero margin utilities */
+.margin-left-0 {
+    margin-left: 0;
+}
+
+.margin-right-0 {
+    margin-right: 0;
+}
+
+/* ============================================
+   Events Page Specific Styles
+   ============================================ */
+
+/* Section margins */
+.section-margin-left {
+    margin-left: 30px;
+}
+
+.section-margin-left-lg {
+    margin-left: 50px;
+}
+
+/* Horizontal rule */
+.section-divider {
+    margin: 20px 30px;
+    border: 1px solid #2d4937;
+}
+
+/* Events flex section */
+.events-flex-section {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.events-images {
+    display: flex;
+    gap: 15px;
+}
+
+.event-image-small {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.event-image-large {
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+/* Image modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.modal-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+}
+
+/* ============================================
+   Tab Navigation Styles
+   ============================================ */
+
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #8b1700;
+    padding-bottom: 0;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8b1700;
+    transition: 0.3s;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.tab-link:hover {
+    color: #cd5810;
+}
+
+.tab-link.active {
+    color: #8b1700;
+    border-bottom: 3px solid #8b1700;
+}
+
+/* Image-based tab navigation */
+.tab-link-img {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.tab-link-img img {
+    display: block;
+    height: 60px;
+    width: auto;
+}
+
+.tab-link-img .btn-filled {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tab-link-img:hover .btn-outline {
+    display: none;
+}
+
+.tab-link-img:hover .btn-filled {
+    display: block;
+}
+
+.tab-link-img.active .btn-outline {
+    display: none;
+}
+
+.tab-link-img.active .btn-filled {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.5s ease;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Visual Work page intro text */
+.visual-work-intro {
+    text-align: center;
+    padding: 20px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #2b1a0c;
+}
+
+/* Portfolio button */
+.portfolio-btn-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.portfolio-btn {
+    display: inline-block;
+    background-color: #8b1700;
+    color: #e3e4d9;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.portfolio-btn:hover {
+    background-color: #4a7c59;
+}
+
+/* ============================================
+   Photo Grid Styles
+   ============================================ */
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.photo-grid-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* Creates square aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-grid-item:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Video grid items */
+.video-grid-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio for videos */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    background: #1a1a1a;
+}
+
+.video-grid-item video,
+.video-grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-grid-item:hover video,
+.video-grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Play button overlay for video thumbnails */
+.video-grid-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(45, 73, 55, 0.8);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    pointer-events: none;
+    transition: background-color 0.3s ease;
+}
+
+.video-grid-item:hover::after {
+    background-color: rgba(45, 73, 55, 1);
+}
+
+/* Design grid - same as photo grid */
+.design-grid-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* Square aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.design-grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.design-grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   Masonry Design Grid Styles
+   ============================================ */
+
+.design-masonry-grid {
+    display: flex;
+    gap: 15px;
+    padding: 0 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.design-masonry-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.design-masonry-item {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    width: 100%;
+}
+
+.design-masonry-item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0;
+    max-width: none;
+    transition: opacity 0.3s ease;
+}
+
+.design-masonry-item:hover img {
+    opacity: 0.85;
+}
+
+/* Responsive masonry grid */
+@media only screen and (max-width: 800px) {
+    .design-masonry-grid {
+        flex-direction: column;
+    }
+
+    .design-masonry-column {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .design-masonry-grid {
+        padding: 0 15px;
+    }
+}
+
+/* Video modal */
+.modal-video {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+}
+
+/* Placeholder grid items (empty slots) */
+.grid-placeholder {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #d0d5ce;
+    border: 2px dashed #2d4937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-placeholder.video-placeholder {
+    padding-bottom: 56.25%;
+    /* 16:9 for video placeholders */
+}
+
+/* ============================================
+   Audio Work Page Styles
+   ============================================ */
+
+.audio-work-intro {
+    text-align: center;
+    padding: 20px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.audio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.audio-grid-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.audio-grid-item:hover {
+    text-decoration: none;
+}
+
+.audio-cover {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* Square aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audio-cover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.audio-grid-item:hover .audio-cover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.audio-info {
+    padding: 12px 4px;
+    text-align: center;
+}
+
+.audio-title {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #8b1700;
+    margin: 0 0 4px 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.audio-artist {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #8b1700;
+    margin: 0 0 4px 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.audio-role {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #8b1700;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* ============================================
+   YouTube Video Grid Styles
+   ============================================ */
+
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.youtube-video-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: #1a1a1a;
+}
+
+.youtube-video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 900px) {
+    .youtube-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .youtube-grid {
+        padding: 0 15px;
+    }
+
+    .youtube-video-item {
+        border-radius: 4px;
+    }
+}
